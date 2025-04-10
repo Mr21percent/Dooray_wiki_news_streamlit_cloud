@@ -81,6 +81,6 @@ if st.button("페이지 전송"):
             content=markdown_content  # 내부적으로 "text/x-markdown" 형식으로 전송합니다.
         )
         st.success("페이지 전송이 완료되었습니다.")
-        st.json(result)
+        #st.json(result)
     except Exception as e:
         st.error(f"페이지 전송 중 오류 발생: {str(e)}")
