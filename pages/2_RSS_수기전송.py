@@ -141,8 +141,8 @@ def generate_markdown(df, start_time, korea_time, use_gpt=False, gpt_prompt=""):
             
             summary = row['summary']
             if use_gpt and summary and gpt_prompt:
-                summary = apply_gpt_summary(summary, gpt_prompt)
-                
+                #summary = apply_gpt_summary(summary, gpt_prompt)
+                pass
             if summary:
                 markdown_output += f"  {summary}\n\n"
             else:
