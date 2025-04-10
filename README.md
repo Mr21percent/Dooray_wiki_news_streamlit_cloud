@@ -1,19 +1,16 @@
-# 💬 Chatbot template
+# Dooray! wiki 발송 예제
 
-A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
+지정된 사람들의 위키 페이지에 정기적으로 뉴스레터 발송
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://chatbot-template.streamlit.app/)
+## st.secrets 예시
 
-### How to run it on your own machine
-
-1. Install the requirements
-
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+```toml
+[user1]
+name = "mr21p"
+Dooray_token = ""
+gpt_key = ""
+```
+## 실행
+```
+streamlit run streamlit_app.py
+```
