@@ -57,7 +57,7 @@ def get_start_date_and_time():
     
     start_time = korea_time - timedelta(days=1)
     
-    while is_holiday(start_time.strftime("%Y-%m-%d")):
+    while start_time.weekday() >= 5 or is_holiday(start_time.strftime("%Y-%m-%d")):
         start_time = start_time - timedelta(days=1)
     
     start_date = start_time.strftime("%Y-%m-%d")

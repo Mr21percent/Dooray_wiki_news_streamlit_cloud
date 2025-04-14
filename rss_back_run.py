@@ -60,7 +60,7 @@ def get_start_date_and_time():
     
     start_time = korea_time - timedelta(days=1)
     
-    while is_holiday(start_time.strftime("%Y-%m-%d")):
+    while start_time.weekday() >= 5 or is_holiday(start_time.strftime("%Y-%m-%d")):
         start_time = start_time - timedelta(days=1)
     
     start_date = start_time.strftime("%Y-%m-%d")
@@ -248,7 +248,7 @@ if __name__ == "__main__":
     scheduler = BackgroundScheduler(timezone="Asia/Seoul")  # ✅ 한국 시간대 지정
     print("🔄 스케줄러 초기화됨.")
     # 매일 오후 5시 (17:00)에 실행
-    trigger = CronTrigger(hour=11, minute=0)
+    trigger = CronTrigger(hour=17, minute=00, timezone="Asia/Seoul" )
     scheduler.add_job(job, trigger)
 
     scheduler.start()
@@ -256,7 +256,7 @@ if __name__ == "__main__":
 
     try:
         while True:
-            time_module.sleep(1)
+            time_module.sleep(0.1)
     except (KeyboardInterrupt, SystemExit):
         print("🛑 종료 중...")
         scheduler.shutdown()
