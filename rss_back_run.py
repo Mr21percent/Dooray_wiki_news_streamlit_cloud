@@ -248,7 +248,7 @@ if __name__ == "__main__":
     scheduler = BackgroundScheduler(timezone="Asia/Seoul")  # ✅ 한국 시간대 지정
     print("🔄 스케줄러 초기화됨.")
     # 매일 오후 5시 (17:00)에 실행
-    trigger = CronTrigger(hour=10, minute=30)
+    trigger = CronTrigger(hour=11, minute=0)
     scheduler.add_job(job, trigger)
 
     scheduler.start()
@@ -256,7 +256,7 @@ if __name__ == "__main__":
 
     try:
         while True:
-            time.sleep(1)
+            time_module.sleep(1)
     except (KeyboardInterrupt, SystemExit):
         print("🛑 종료 중...")
         scheduler.shutdown()
